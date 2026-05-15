@@ -57,6 +57,40 @@
             color: #3498db;
         }
 
+        /* Download Button */
+        .download-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .download-btn a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        .download-btn a:hover {
+            background: linear-gradient(135deg, #2980b9 0%, #1f618d 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .download-btn a:active {
+            transform: translateY(0);
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -138,6 +172,62 @@
             color: #666;
             font-size: 0.95rem;
         }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        #contact h2 {
+            color: white;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .contact-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .contact-card p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            word-break: break-all;
+        }
+
+        .contact-card a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-card a:hover {
+            color: #2ecc71;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -153,6 +243,9 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+            <div class="download-btn">
+                <a href="#" onclick="downloadResume()" title="Download Resume">📥 Download Resume</a>
+            </div>
         </div>
     </header>
 
@@ -207,5 +300,49 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>📱 Phone</h3>
+                <p><a href="tel:+16892669306">+1 689-266-9306</a></p>
+            </div>
+            <div class="contact-card">
+                <h3>📧 Email</h3>
+                <p><a href="mailto:nirmalkumarusa255@gmail.com">nirmalkumarusa255@gmail.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function downloadResume() {
+            // Replace 'resume.pdf' with the actual path to your resume file
+            const link = document.createElement('a');
+            link.href = 'resume.pdf';
+            link.download = 'Nirmal_Kumar_Resume.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Smooth scroll behavior for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                // Don't prevent default for download button
+                if (href !== '#' && !this.classList.contains('download-btn')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
