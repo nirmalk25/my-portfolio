@@ -175,13 +175,13 @@
 
         /* Contact Section */
         #contact {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background-color: white;
+            color: #333;
         }
 
         #contact h2 {
-            color: white;
-            border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
         }
 
         .contact-grid {
@@ -192,40 +192,42 @@
         }
 
         .contact-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 8px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            text-align: center;
-            transition: transform 0.3s, background-color 0.3s;
+            background-color: transparent;
+            padding: 1rem;
+            border-radius: 0;
+            text-align: left;
+            transition: none;
         }
 
         .contact-card:hover {
-            transform: translateY(-5px);
-            background-color: rgba(255, 255, 255, 0.15);
+            transform: none;
+            background-color: transparent;
         }
 
         .contact-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             margin-bottom: 0.5rem;
-            color: white;
+            color: #333;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .contact-card p {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            color: #555;
             word-break: break-all;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: normal;
         }
 
         .contact-card a {
-            color: #3498db;
+            color: #555;
             text-decoration: none;
             transition: color 0.3s;
         }
 
         .contact-card a:hover {
-            color: #2ecc71;
+            color: #3498db;
             text-decoration: underline;
         }
     </style>
@@ -244,7 +246,7 @@
                 </ul>
             </nav>
             <div class="download-btn">
-                <a href="#" onclick="downloadResume()" title="Download Resume">📥 Download Resume</a>
+                <a href="#" onclick="downloadResume()" title="Download Resume">Download Resume</a>
             </div>
         </div>
     </header>
@@ -305,11 +307,11 @@
         <h2>Contact</h2>
         <div class="contact-grid">
             <div class="contact-card">
-                <h3>📱 Phone</h3>
+                <h3>Phone</h3>
                 <p><a href="tel:+16892669306">+1 689-266-9306</a></p>
             </div>
             <div class="contact-card">
-                <h3>📧 Email</h3>
+                <h3>Email</h3>
                 <p><a href="mailto:nirmalkumarusa255@gmail.com">nirmalkumarusa255@gmail.com</a></p>
             </div>
         </div>
